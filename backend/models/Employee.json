@@ -1,0 +1,19 @@
+{
+  "name": "Employee",
+  "fields": [],
+  "ownerField": "2345",
+  "rbac": {
+    "Admin": [
+      "all"
+    ],
+    "Manager": [
+      "create",
+      "read",
+      "update"
+    ],
+    "Viewer": [
+      "read"
+    ]
+  },
+  "tableName": "employees"
+}

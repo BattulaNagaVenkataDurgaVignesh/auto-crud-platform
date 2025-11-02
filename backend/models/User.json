@@ -1,0 +1,19 @@
+{
+  "name": "User",
+  "fields": [],
+  "ownerField": "",
+  "rbac": {
+    "Admin": [
+      "all"
+    ],
+    "Manager": [
+      "create",
+      "read",
+      "update"
+    ],
+    "Viewer": [
+      "read"
+    ]
+  },
+  "tableName": "users"
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auto CRUD Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">⚙️</span> <span>Auto-CRUD</span>
+    </div>
+    <ul class="sidebar-menu" id="sidebarMenu">
+      <li><a href="#" id="showDashboard" class="active">Dashboard</a></li>
+      <li><a href="#" id="showLogin">Login</a></li>
+      <li><a href="#" id="showModels">Published Models</a></li>
+    </ul>
+  </aside>
+
+  <!-- ===== Main Wrapper ===== -->
+  <div class="wrapper">
+    <!-- ===== Topbar ===== -->
+    <header class="topbar">
+      <div class="top-actions">
+        <span class="username" id="userWelcome">Guest</span>
+        <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      </div>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main class="main">
+      <!-- Dashboard Section -->
+      <section id="dashboardSection" class="card analytics">
+        <h2>Overview</h2>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <h3 id="totalModels">0</h3>
+            <p>Total Models</p>
+          </div>
+          <div class="stat-box">
+            <h3 id="totalRecords">0</h3>
+            <p>Total Records</p>
+          </div>
+          <div class="stat-box">
+            <h3 id="activeUsers">0</h3>
+            <p>Active Users</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Login -->
+      <section id="loginSection" class="card hidden">
+        <h2>Login</h2>
+        <label>User ID</label>
+        <input id="userId" type="text" placeholder="admin1" />
+        <label>Role</label>
+        <select id="userRole">
+          <option>Admin</option>
+          <option>Manager</option>
+          <option>Viewer</option>
+        </select>
+        <button id="loginBtn" class="btn btn-primary">Login</button>
+        <p id="loginMsg" class="msg"></p>
+      </section>
+
+      <!-- Model Builder -->
+      <section id="modelBuilder" class="card hidden">
+        <h2>Model Builder</h2>
+        <input id="modelName" placeholder="Model Name e.g. Employee" />
+        <input id="ownerField" placeholder="Owner Field (optional)" />
+        <div id="fieldsContainer"></div>
+        <button id="addFieldBtn" class="btn btn-secondary">+ Add Field</button>
+        <label>RBAC JSON</label>
+        <textarea id="rbacJson" rows="5">{
+  "Admin": ["all"],
+  "Manager": ["create","read","update"],
+  "Viewer": ["read"]
+}</textarea>
+        <button id="publishModelBtn" class="btn btn-primary">Publish Model</button>
+        <p id="publishMsg" class="msg"></p>
+      </section>
+
+      <!-- Published Models -->
+      <section id="modelsList" class="card hidden">
+        <h2>Published Models</h2>
+        <ul id="modelsContainer" class="models-list"></ul>
+        <div id="recordsContainer"></div>
+      </section>
+    </main>
+
+    <footer>© 2025 Auto-Generated CRUD + RBAC Platform</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
